@@ -1,26 +1,44 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <form class="form" @submit.prevent="">
+    <fieldset>
+      <BaseSuggest />
+    </fieldset>
+  </form>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import BaseSuggest from './components/BaseSuggest.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    BaseSuggest
   }
 }
 </script>
 
-<style>
+<style lang="scss">
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.form {
+  margin: 120px 0 0 0;
+
+  & fieldset {
+    display: flex;
+    flex-direction: column;
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
 }
 </style>
